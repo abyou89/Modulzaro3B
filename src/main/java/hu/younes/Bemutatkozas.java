@@ -2,6 +2,8 @@ package hu.younes;
 
 import hu.younes.modell.Ember;
 
+import java.util.List;
+
 public class Bemutatkozas {
 
     private Ember[] emberek;
@@ -14,6 +16,9 @@ public class Bemutatkozas {
         emberek[3] = new Ember("Evelin", 28,"angol,francia");
         emberek[4] = new Ember("Béla", 31,"német");
 
+        emberek[1].hozzaadNyelv("spanyol");
+        emberek[2].hozzaadNyelv("francia");
+
         megjelenit();
 
 
@@ -24,8 +29,8 @@ public class Bemutatkozas {
         for (int i = 0; i < emberek.length; i++) {
             String nev = emberek[i].getNev();
             int kor = emberek[i].getKor();
-            String nyelv = emberek[i].getNyelv();
-            szoveg += nev + " " + kor + " " + nyelv;
+            List<String> nyelvek = emberek[i].getNyelvek();
+            szoveg += nev + " " + kor + " " + nyelvek + "\n";
         }
         System.out.println(szoveg);
     }
