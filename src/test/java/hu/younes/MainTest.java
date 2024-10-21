@@ -28,4 +28,13 @@ class MainTest {
         Assertions.assertEquals(true,kapott);
     }
 
+    @Test
+    public void testTobbnyelvHozzaad() {
+        Ember ember = new Ember("Éva",20,"olasz");
+        ember.hozzaadNyelv("francia");
+        ember.hozzaadNyelv("angol");
+        int kapott = ember.getNyelvek().size();
+        Assertions.assertEquals(3,kapott);
+    }
+
 }
