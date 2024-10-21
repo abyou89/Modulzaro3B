@@ -21,4 +21,11 @@ class MainTest {
         Assertions.assertEquals(true,kapott);
     }
 
+    @Test
+    public void testAlapertelmezettNyelv() {
+        Ember ember = new Ember("Béla",18);
+        boolean kapott = ember.getNyelvek().contains("nem beszél");
+        Assertions.assertEquals(true,kapott);
+    }
+
 }
